@@ -1,5 +1,8 @@
 # MacroX
 
+<img width="1901" height="560" alt="image_35e42128" src="https://github.com/user-attachments/assets/95dd7803-1f60-44b4-b41b-8cb79554ce01" />
+
+
 **Aplicación de escritorio para Windows desarrollada con C# y .NET 10.**
 
 MacroX es un proyecto de aplicación local diseñado para ejecutarse inicialmente en un entorno Windows de un solo usuario, sin depender de servidores ni servicios externos.
