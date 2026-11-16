@@ -1,5 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\src\MacroX.Application\MacroX.Application.csproj" />
+    <ProjectReference Include="..\src\MacroX.Infrastructure\MacroX.Infrastructure.csproj" />
+    <ProjectReference Include="..\src\MacroX.Shared\MacroX.Shared.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>

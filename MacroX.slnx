@@ -1,3 +1,9 @@
 <Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MacroX.Application/MacroX.Application.csproj" />
+    <Project Path="src/MacroX.Domain/MacroX.Domain.csproj" />
+    <Project Path="src/MacroX.Infrastructure/MacroX.Infrastructure.csproj" />
+    <Project Path="src/MacroX.Shared/MacroX.Shared.csproj" />
+  </Folder>
   <Project Path="macrox/macrox.csproj" />
 </Solution>
