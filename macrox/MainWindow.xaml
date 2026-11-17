@@ -69,13 +69,13 @@
                      Margin="-320,-340,0,0"
                      HorizontalAlignment="Left"
                      VerticalAlignment="Top"
-                     Fill="{StaticResource PurpleGlowBrush}" />
+                     Fill="{StaticResource GreenGlowBrush}" />
             <Ellipse Width="620"
                      Height="620"
                      Margin="0,0,-280,-320"
                      HorizontalAlignment="Right"
                      VerticalAlignment="Bottom"
-                     Fill="{StaticResource DeepPurpleGlowBrush}" />
+                     Fill="{StaticResource DeepGreenGlowBrush}" />
         </Grid>
 
         <Grid Margin="14">

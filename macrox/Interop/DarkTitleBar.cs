@@ -35,9 +35,9 @@ namespace macrox.Interop
                 DwmSetWindowAttribute(handle, DwmwaUseImmersiveDarkModeLegacy, ref enabled, sizeof(int));
             }
 
-            ApplyColor(handle, DwmwaCaptionColor, 0x0B0614);
-            ApplyColor(handle, DwmwaTextColor, 0xF5F3FF);
-            ApplyColor(handle, DwmwaBorderColor, 0x241436);
+            ApplyColor(handle, DwmwaCaptionColor, 0x06100A);
+            ApplyColor(handle, DwmwaTextColor, 0xF2F7F3);
+            ApplyColor(handle, DwmwaBorderColor, 0x163322);
 
             var rounded = DwmwcpRound;
             DwmSetWindowAttribute(handle, DwmwaWindowCornerPreference, ref rounded, sizeof(int));

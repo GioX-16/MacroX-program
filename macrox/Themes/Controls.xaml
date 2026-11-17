@@ -3,8 +3,8 @@
 
     <!-- ============================================================
          Estilos de control del shell Dark Glass.
-         Superficies translúcidas neutras; el morado se reserva para
-         el acento, la selección y los estados activos.
+         Superficies translúcidas neutras; el verde del logo se
+         reserva para el acento, la selección y los estados activos.
          ============================================================ -->
 
     <Style x:Key="FocusVisualStyle">
@@ -171,7 +171,7 @@
 
     <!-- Botones. Radios moderados para un tono más serio que las píldoras. -->
     <Style x:Key="PrimaryButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="{StaticResource AccentDeepBrush}" />
+        <Setter Property="Background" Value="{StaticResource AccentBrush}" />
         <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
         <Setter Property="Padding" Value="18,10" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeBody}" />
