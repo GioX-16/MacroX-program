@@ -3,35 +3,37 @@
 
     <!-- ============================================================
          Paleta Dark Glass de MacroX.
-         Fondo profundo + superficies translúcidas + acento índigo.
+         Monocromática: negros violáceos, morado profundo y un solo
+         acento violeta. Sin colores secundarios.
          ============================================================ -->
 
     <!-- Superficies -->
-    <Color x:Key="PageBackgroundColor">#0A0F1E</Color>
-    <Color x:Key="SurfaceColor">#1AFFFFFF</Color>
-    <Color x:Key="SurfaceStrongColor">#24FFFFFF</Color>
+    <Color x:Key="PageBackgroundColor">#0B0614</Color>
+    <Color x:Key="SurfaceColor">#14FFFFFF</Color>
+    <Color x:Key="SurfaceStrongColor">#1AFFFFFF</Color>
     <Color x:Key="SurfaceMutedColor">#1FFFFFFF</Color>
-    <Color x:Key="BorderColor">#2EFFFFFF</Color>
-    <Color x:Key="GlassHighlightColor">#40FFFFFF</Color>
+    <Color x:Key="BorderColor">#26FFFFFF</Color>
+    <Color x:Key="GlassHighlightColor">#38FFFFFF</Color>
 
     <!-- Texto -->
-    <Color x:Key="TextPrimaryColor">#F8FAFC</Color>
-    <Color x:Key="TextSecondaryColor">#CBD5E1</Color>
-    <Color x:Key="TextMutedColor">#94A3B8</Color>
+    <Color x:Key="TextPrimaryColor">#F5F3FF</Color>
+    <Color x:Key="TextSecondaryColor">#C7BFD6</Color>
+    <Color x:Key="TextMutedColor">#8F86A3</Color>
 
-    <!-- Marca / acento -->
-    <Color x:Key="AccentColor">#6366F1</Color>
-    <Color x:Key="AccentHoverColor">#818CF8</Color>
+    <!-- Acento único -->
+    <Color x:Key="AccentColor">#8B5CF6</Color>
+    <Color x:Key="AccentHoverColor">#A78BFA</Color>
+    <Color x:Key="AccentDeepColor">#7C3AED</Color>
     <Color x:Key="AccentForegroundColor">#FFFFFF</Color>
-    <Color x:Key="AccentSoftColor">#336366F1</Color>
-    <Color x:Key="FocusColor">#A5B4FC</Color>
+    <Color x:Key="AccentSoftColor">#337C3AED</Color>
+    <Color x:Key="FocusColor">#C4B5FD</Color>
 
     <!-- Barra lateral de cristal -->
-    <Color x:Key="SidebarBackgroundColor">#CC0B1020</Color>
-    <Color x:Key="SidebarForegroundColor">#E2E8F0</Color>
-    <Color x:Key="SidebarMutedColor">#94A3B8</Color>
-    <Color x:Key="SidebarHoverColor">#1FFFFFFF</Color>
-    <Color x:Key="SidebarSelectedColor">#4D6366F1</Color>
+    <Color x:Key="SidebarBackgroundColor">#CC0E0818</Color>
+    <Color x:Key="SidebarForegroundColor">#EDE9FE</Color>
+    <Color x:Key="SidebarMutedColor">#A79FBB</Color>
+    <Color x:Key="SidebarHoverColor">#1AFFFFFF</Color>
+    <Color x:Key="SidebarSelectedColor">#3D7C3AED</Color>
     <Color x:Key="SidebarSelectedForegroundColor">#FFFFFF</Color>
 
     <!-- Pinceles -->
@@ -48,6 +50,7 @@
 
     <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
     <SolidColorBrush x:Key="AccentHoverBrush" Color="{StaticResource AccentHoverColor}" />
+    <SolidColorBrush x:Key="AccentDeepBrush" Color="{StaticResource AccentDeepColor}" />
     <SolidColorBrush x:Key="AccentForegroundBrush" Color="{StaticResource AccentForegroundColor}" />
     <SolidColorBrush x:Key="AccentSoftBrush" Color="{StaticResource AccentSoftColor}" />
     <SolidColorBrush x:Key="FocusBrush" Color="{StaticResource FocusColor}" />
@@ -59,33 +62,28 @@
     <SolidColorBrush x:Key="SidebarSelectedBrush" Color="{StaticResource SidebarSelectedColor}" />
     <SolidColorBrush x:Key="SidebarSelectedForegroundBrush" Color="{StaticResource SidebarSelectedForegroundColor}" />
 
-    <!-- Fondo con degradado profundo -->
+    <!-- Fondo: degradado violáceo profundo -->
     <LinearGradientBrush x:Key="AppBackdropBrush" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Offset="0" Color="#0A0F1E" />
-        <GradientStop Offset="0.55" Color="#0F1730" />
-        <GradientStop Offset="1" Color="#170F2B" />
+        <GradientStop Offset="0" Color="#0B0614" />
+        <GradientStop Offset="0.55" Color="#150A26" />
+        <GradientStop Offset="1" Color="#1E0F35" />
     </LinearGradientBrush>
 
-    <!-- Resplandores decorativos (sin desenfoque, para no castigar el rendimiento) -->
-    <RadialGradientBrush x:Key="IndigoGlowBrush">
-        <GradientStop Offset="0" Color="#664F46E5" />
-        <GradientStop Offset="1" Color="#004F46E5" />
-    </RadialGradientBrush>
-
-    <RadialGradientBrush x:Key="VioletGlowBrush">
-        <GradientStop Offset="0" Color="#597C3AED" />
+    <!-- Dos resplandores del mismo tono, muy contenidos -->
+    <RadialGradientBrush x:Key="PurpleGlowBrush">
+        <GradientStop Offset="0" Color="#4D7C3AED" />
         <GradientStop Offset="1" Color="#007C3AED" />
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="CyanGlowBrush">
-        <GradientStop Offset="0" Color="#4014B8A6" />
-        <GradientStop Offset="1" Color="#0014B8A6" />
+    <RadialGradientBrush x:Key="DeepPurpleGlowBrush">
+        <GradientStop Offset="0" Color="#336D28D9" />
+        <GradientStop Offset="1" Color="#006D28D9" />
     </RadialGradientBrush>
 
     <!-- Formas y espaciados reutilizables -->
     <CornerRadius x:Key="CornerRadiusSmall">10</CornerRadius>
     <CornerRadius x:Key="CornerRadiusMedium">14</CornerRadius>
-    <CornerRadius x:Key="CornerRadiusLarge">20</CornerRadius>
+    <CornerRadius x:Key="CornerRadiusLarge">18</CornerRadius>
     <CornerRadius x:Key="CornerRadiusPill">999</CornerRadius>
 
     <Thickness x:Key="PagePadding">24,8,28,0</Thickness>

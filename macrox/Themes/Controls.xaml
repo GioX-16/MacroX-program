@@ -3,6 +3,8 @@
 
     <!-- ============================================================
          Estilos de control del shell Dark Glass.
+         Superficies translúcidas neutras; el morado se reserva para
+         el acento, la selección y los estados activos.
          ============================================================ -->
 
     <Style x:Key="FocusVisualStyle">
@@ -30,11 +32,11 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Effect">
             <Setter.Value>
-                <DropShadowEffect BlurRadius="32"
+                <DropShadowEffect BlurRadius="36"
                                   Direction="270"
-                                  Opacity="0.45"
-                                  ShadowDepth="6"
-                                  Color="#000000" />
+                                  Opacity="0.5"
+                                  ShadowDepth="8"
+                                  Color="#05010A" />
             </Setter.Value>
         </Setter>
     </Style>
@@ -59,11 +61,11 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Effect">
             <Setter.Value>
-                <DropShadowEffect BlurRadius="30"
+                <DropShadowEffect BlurRadius="26"
                                   Direction="270"
-                                  Opacity="0.35"
-                                  ShadowDepth="8"
-                                  Color="#000000" />
+                                  Opacity="0.3"
+                                  ShadowDepth="6"
+                                  Color="#05010A" />
             </Setter.Value>
         </Setter>
     </Style>
@@ -74,6 +76,7 @@
         <Setter Property="FontSize" Value="20" />
         <Setter Property="FontWeight" Value="SemiBold" />
         <Setter Property="Foreground" Value="{StaticResource SidebarSelectedForegroundBrush}" />
+        <Setter Property="Typography.Capitals" Value="AllSmallCaps" />
     </Style>
 
     <Style x:Key="SidebarCaptionTextStyle" TargetType="TextBlock">
@@ -95,8 +98,8 @@
 
     <Style x:Key="NavigationItemStyle" TargetType="ListBoxItem">
         <Setter Property="AutomationProperties.Name" Value="{Binding Title}" />
-        <Setter Property="Margin" Value="0,3" />
-        <Setter Property="Padding" Value="14,12" />
+        <Setter Property="Margin" Value="0,2" />
+        <Setter Property="Padding" Value="10,10" />
         <Setter Property="Foreground" Value="{StaticResource SidebarForegroundBrush}" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisualStyle}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -108,21 +111,34 @@
                             Background="Transparent"
                             BorderBrush="Transparent"
                             BorderThickness="1"
-                            CornerRadius="{StaticResource CornerRadiusMedium}"
+                            CornerRadius="{StaticResource CornerRadiusSmall}"
                             SnapsToDevicePixels="True">
                         <Grid>
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="14" />
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock VerticalAlignment="Center"
+                            <Rectangle x:Name="Indicator"
+                                       Grid.Column="0"
+                                       Width="3"
+                                       Height="18"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       Fill="{StaticResource AccentHoverBrush}"
+                                       RadiusX="1.5"
+                                       RadiusY="1.5"
+                                       Visibility="Collapsed" />
+
+                            <TextBlock Grid.Column="1"
+                                       VerticalAlignment="Center"
                                        FontFamily="{StaticResource FontFamilyIcons}"
                                        FontSize="18"
                                        Foreground="{TemplateBinding Foreground}"
                                        Text="{Binding Icon}" />
 
-                            <StackPanel Grid.Column="1" Margin="14,0,0,0" VerticalAlignment="Center">
+                            <StackPanel Grid.Column="2" Margin="12,0,0,0" VerticalAlignment="Center">
                                 <TextBlock FontSize="{StaticResource FontSizeBody}"
                                            FontWeight="SemiBold"
                                            Foreground="{TemplateBinding Foreground}"
@@ -131,7 +147,7 @@
                                 <TextBlock Margin="0,2,0,0"
                                            FontSize="{StaticResource FontSizeCaption}"
                                            Foreground="{TemplateBinding Foreground}"
-                                           Opacity="0.7"
+                                           Opacity="0.65"
                                            Text="{Binding Description}"
                                            TextTrimming="CharacterEllipsis" />
                             </StackPanel>
@@ -143,7 +159,8 @@
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter TargetName="Root" Property="Background" Value="{StaticResource SidebarSelectedBrush}" />
-                            <Setter TargetName="Root" Property="BorderBrush" Value="{StaticResource GlassHighlightBrush}" />
+                            <Setter TargetName="Root" Property="BorderBrush" Value="{StaticResource AccentSoftBrush}" />
+                            <Setter TargetName="Indicator" Property="Visibility" Value="Visible" />
                             <Setter Property="Foreground" Value="{StaticResource SidebarSelectedForegroundBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -152,11 +169,11 @@
         </Setter>
     </Style>
 
-    <!-- Botones tipo píldora -->
+    <!-- Botones. Radios moderados para un tono más serio que las píldoras. -->
     <Style x:Key="PrimaryButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+        <Setter Property="Background" Value="{StaticResource AccentDeepBrush}" />
         <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
-        <Setter Property="Padding" Value="20,10" />
+        <Setter Property="Padding" Value="18,10" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeBody}" />
         <Setter Property="FontWeight" Value="SemiBold" />
         <Setter Property="Cursor" Value="Hand" />
@@ -167,7 +184,9 @@
                     <Border x:Name="Root"
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
-                            CornerRadius="{StaticResource CornerRadiusPill}"
+                            BorderBrush="{StaticResource GlassHighlightBrush}"
+                            BorderThickness="1"
+                            CornerRadius="{StaticResource CornerRadiusSmall}"
                             SnapsToDevicePixels="True">
                         <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
@@ -194,7 +213,7 @@
         <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Padding" Value="20,10" />
+        <Setter Property="Padding" Value="18,10" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeBody}" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisualStyle}" />
@@ -206,7 +225,7 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{StaticResource CornerRadiusPill}"
+                            CornerRadius="{StaticResource CornerRadiusSmall}"
                             SnapsToDevicePixels="True">
                         <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"

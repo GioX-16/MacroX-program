@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:macrox.ViewModels"
         Title="{Binding ApplicationTitle, Mode=OneWay, FallbackValue=MacroX}"
+        Icon="pack://application:,,,/Macrox_app_icon.ico"
         Width="1240"
         Height="780"
         MinWidth="980"
@@ -63,24 +64,18 @@
     <Grid>
         <!-- Fondo decorativo de cristal -->
         <Grid ClipToBounds="True" IsHitTestVisible="False">
-            <Ellipse Width="640"
-                     Height="640"
-                     Margin="-260,-280,0,0"
+            <Ellipse Width="700"
+                     Height="700"
+                     Margin="-320,-340,0,0"
                      HorizontalAlignment="Left"
                      VerticalAlignment="Top"
-                     Fill="{StaticResource IndigoGlowBrush}" />
-            <Ellipse Width="520"
-                     Height="520"
-                     Margin="0,0,-160,-220"
+                     Fill="{StaticResource PurpleGlowBrush}" />
+            <Ellipse Width="620"
+                     Height="620"
+                     Margin="0,0,-280,-320"
                      HorizontalAlignment="Right"
                      VerticalAlignment="Bottom"
-                     Fill="{StaticResource CyanGlowBrush}" />
-            <Ellipse Width="460"
-                     Height="460"
-                     Margin="0,140,-40,0"
-                     HorizontalAlignment="Center"
-                     VerticalAlignment="Center"
-                     Fill="{StaticResource VioletGlowBrush}" />
+                     Fill="{StaticResource DeepPurpleGlowBrush}" />
         </Grid>
 
         <Grid Margin="14">
@@ -99,20 +94,12 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Margin="24,26,24,22" Orientation="Horizontal">
-                        <Border Width="38"
-                                Height="38"
-                                Background="{StaticResource AccentBrush}"
-                                BorderBrush="{StaticResource GlassHighlightBrush}"
-                                BorderThickness="1"
-                                CornerRadius="{StaticResource CornerRadiusSmall}">
-                            <TextBlock HorizontalAlignment="Center"
-                                       VerticalAlignment="Center"
-                                       FontFamily="{StaticResource FontFamilyDisplay}"
-                                       FontSize="20"
-                                       FontWeight="Bold"
-                                       Foreground="{StaticResource AccentForegroundBrush}"
-                                       Text="M" />
-                        </Border>
+                        <Image Width="42"
+                               Height="42"
+                               VerticalAlignment="Center"
+                               AutomationProperties.Name="MacroX"
+                               RenderOptions.BitmapScalingMode="HighQuality"
+                               Source="pack://application:,,,/Assets/Macrox_logo.png" />
                         <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
                             <TextBlock Style="{StaticResource BrandTextStyle}"
                                        Text="{Binding ApplicationTitle, Mode=OneWay}" />
