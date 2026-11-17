@@ -2,40 +2,45 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!-- ============================================================
-         Paleta de MacroX. Cambiar aquí afecta a toda la aplicación.
+         Paleta Dark Glass de MacroX.
+         Fondo profundo + superficies translúcidas + acento índigo.
          ============================================================ -->
 
-    <!-- Superficies (contenido) -->
-    <Color x:Key="PageBackgroundColor">#F4F5F9</Color>
-    <Color x:Key="SurfaceColor">#FFFFFF</Color>
-    <Color x:Key="SurfaceMutedColor">#F9FAFB</Color>
-    <Color x:Key="BorderColor">#E5E7EB</Color>
+    <!-- Superficies -->
+    <Color x:Key="PageBackgroundColor">#0A0F1E</Color>
+    <Color x:Key="SurfaceColor">#1AFFFFFF</Color>
+    <Color x:Key="SurfaceStrongColor">#24FFFFFF</Color>
+    <Color x:Key="SurfaceMutedColor">#1FFFFFFF</Color>
+    <Color x:Key="BorderColor">#2EFFFFFF</Color>
+    <Color x:Key="GlassHighlightColor">#40FFFFFF</Color>
 
     <!-- Texto -->
-    <Color x:Key="TextPrimaryColor">#111827</Color>
-    <Color x:Key="TextSecondaryColor">#4B5563</Color>
-    <Color x:Key="TextMutedColor">#9CA3AF</Color>
+    <Color x:Key="TextPrimaryColor">#F8FAFC</Color>
+    <Color x:Key="TextSecondaryColor">#CBD5E1</Color>
+    <Color x:Key="TextMutedColor">#94A3B8</Color>
 
     <!-- Marca / acento -->
-    <Color x:Key="AccentColor">#4F46E5</Color>
-    <Color x:Key="AccentHoverColor">#4338CA</Color>
+    <Color x:Key="AccentColor">#6366F1</Color>
+    <Color x:Key="AccentHoverColor">#818CF8</Color>
     <Color x:Key="AccentForegroundColor">#FFFFFF</Color>
-    <Color x:Key="AccentSoftColor">#EEF2FF</Color>
-    <Color x:Key="FocusColor">#6366F1</Color>
+    <Color x:Key="AccentSoftColor">#336366F1</Color>
+    <Color x:Key="FocusColor">#A5B4FC</Color>
 
-    <!-- Barra lateral oscura -->
-    <Color x:Key="SidebarBackgroundColor">#111827</Color>
-    <Color x:Key="SidebarForegroundColor">#E5E7EB</Color>
-    <Color x:Key="SidebarMutedColor">#9CA3AF</Color>
-    <Color x:Key="SidebarHoverColor">#1F2937</Color>
-    <Color x:Key="SidebarSelectedColor">#312E81</Color>
+    <!-- Barra lateral de cristal -->
+    <Color x:Key="SidebarBackgroundColor">#CC0B1020</Color>
+    <Color x:Key="SidebarForegroundColor">#E2E8F0</Color>
+    <Color x:Key="SidebarMutedColor">#94A3B8</Color>
+    <Color x:Key="SidebarHoverColor">#1FFFFFFF</Color>
+    <Color x:Key="SidebarSelectedColor">#4D6366F1</Color>
     <Color x:Key="SidebarSelectedForegroundColor">#FFFFFF</Color>
 
     <!-- Pinceles -->
     <SolidColorBrush x:Key="PageBackgroundBrush" Color="{StaticResource PageBackgroundColor}" />
     <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource SurfaceColor}" />
+    <SolidColorBrush x:Key="SurfaceStrongBrush" Color="{StaticResource SurfaceStrongColor}" />
     <SolidColorBrush x:Key="SurfaceMutedBrush" Color="{StaticResource SurfaceMutedColor}" />
     <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}" />
+    <SolidColorBrush x:Key="GlassHighlightBrush" Color="{StaticResource GlassHighlightColor}" />
 
     <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimaryColor}" />
     <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource TextSecondaryColor}" />
@@ -54,12 +59,36 @@
     <SolidColorBrush x:Key="SidebarSelectedBrush" Color="{StaticResource SidebarSelectedColor}" />
     <SolidColorBrush x:Key="SidebarSelectedForegroundBrush" Color="{StaticResource SidebarSelectedForegroundColor}" />
 
+    <!-- Fondo con degradado profundo -->
+    <LinearGradientBrush x:Key="AppBackdropBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Offset="0" Color="#0A0F1E" />
+        <GradientStop Offset="0.55" Color="#0F1730" />
+        <GradientStop Offset="1" Color="#170F2B" />
+    </LinearGradientBrush>
+
+    <!-- Resplandores decorativos (sin desenfoque, para no castigar el rendimiento) -->
+    <RadialGradientBrush x:Key="IndigoGlowBrush">
+        <GradientStop Offset="0" Color="#664F46E5" />
+        <GradientStop Offset="1" Color="#004F46E5" />
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="VioletGlowBrush">
+        <GradientStop Offset="0" Color="#597C3AED" />
+        <GradientStop Offset="1" Color="#007C3AED" />
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="CyanGlowBrush">
+        <GradientStop Offset="0" Color="#4014B8A6" />
+        <GradientStop Offset="1" Color="#0014B8A6" />
+    </RadialGradientBrush>
+
     <!-- Formas y espaciados reutilizables -->
-    <CornerRadius x:Key="CornerRadiusSmall">8</CornerRadius>
-    <CornerRadius x:Key="CornerRadiusMedium">12</CornerRadius>
+    <CornerRadius x:Key="CornerRadiusSmall">10</CornerRadius>
+    <CornerRadius x:Key="CornerRadiusMedium">14</CornerRadius>
+    <CornerRadius x:Key="CornerRadiusLarge">20</CornerRadius>
     <CornerRadius x:Key="CornerRadiusPill">999</CornerRadius>
 
-    <Thickness x:Key="PagePadding">32,24,32,24</Thickness>
+    <Thickness x:Key="PagePadding">24,8,28,0</Thickness>
     <Thickness x:Key="CardPadding">32</Thickness>
 
 </ResourceDictionary>

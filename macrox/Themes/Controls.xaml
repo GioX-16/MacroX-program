@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!-- ============================================================
-         Estilos de control reutilizables del shell.
+         Estilos de control del shell Dark Glass.
          ============================================================ -->
 
     <Style x:Key="FocusVisualStyle">
@@ -10,8 +10,8 @@
             <Setter.Value>
                 <ControlTemplate>
                     <Rectangle Margin="2"
-                               RadiusX="6"
-                               RadiusY="6"
+                               RadiusX="8"
+                               RadiusY="8"
                                SnapsToDevicePixels="True"
                                Stroke="{StaticResource FocusBrush}"
                                StrokeDashArray="1 2"
@@ -21,14 +21,51 @@
         </Setter>
     </Style>
 
-    <!-- Tarjeta de contenido -->
-    <Style x:Key="CardBorderStyle" TargetType="Border">
+    <!-- Panel de cristal del shell (barra lateral) -->
+    <Style x:Key="GlassSidebarStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource SidebarBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{StaticResource CornerRadiusLarge}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="32"
+                                  Direction="270"
+                                  Opacity="0.45"
+                                  ShadowDepth="6"
+                                  Color="#000000" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Barra de estado de cristal -->
+    <Style x:Key="GlassStatusBarStyle" TargetType="Border">
         <Setter Property="Background" Value="{StaticResource SurfaceBrush}" />
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="CornerRadius" Value="{StaticResource CornerRadiusMedium}" />
+        <Setter Property="Padding" Value="16,10" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+    </Style>
+
+    <!-- Tarjeta de contenido -->
+    <Style x:Key="CardBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource SurfaceStrongBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="{StaticResource CornerRadiusLarge}" />
         <Setter Property="Padding" Value="{StaticResource CardPadding}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="30"
+                                  Direction="270"
+                                  Opacity="0.35"
+                                  ShadowDepth="8"
+                                  Color="#000000" />
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <!-- Texto de marca de la barra lateral -->
@@ -58,7 +95,7 @@
 
     <Style x:Key="NavigationItemStyle" TargetType="ListBoxItem">
         <Setter Property="AutomationProperties.Name" Value="{Binding Title}" />
-        <Setter Property="Margin" Value="0,2" />
+        <Setter Property="Margin" Value="0,3" />
         <Setter Property="Padding" Value="14,12" />
         <Setter Property="Foreground" Value="{StaticResource SidebarForegroundBrush}" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisualStyle}" />
@@ -69,6 +106,8 @@
                     <Border x:Name="Root"
                             Padding="{TemplateBinding Padding}"
                             Background="Transparent"
+                            BorderBrush="Transparent"
+                            BorderThickness="1"
                             CornerRadius="{StaticResource CornerRadiusMedium}"
                             SnapsToDevicePixels="True">
                         <Grid>
@@ -104,6 +143,7 @@
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter TargetName="Root" Property="Background" Value="{StaticResource SidebarSelectedBrush}" />
+                            <Setter TargetName="Root" Property="BorderBrush" Value="{StaticResource GlassHighlightBrush}" />
                             <Setter Property="Foreground" Value="{StaticResource SidebarSelectedForegroundBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -112,11 +152,11 @@
         </Setter>
     </Style>
 
-    <!-- Botones -->
+    <!-- Botones tipo píldora -->
     <Style x:Key="PrimaryButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="{StaticResource AccentBrush}" />
         <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
-        <Setter Property="Padding" Value="16,10" />
+        <Setter Property="Padding" Value="20,10" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeBody}" />
         <Setter Property="FontWeight" Value="SemiBold" />
         <Setter Property="Cursor" Value="Hand" />
@@ -127,7 +167,7 @@
                     <Border x:Name="Root"
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
-                            CornerRadius="{StaticResource CornerRadiusSmall}"
+                            CornerRadius="{StaticResource CornerRadiusPill}"
                             SnapsToDevicePixels="True">
                         <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
@@ -150,11 +190,11 @@
     </Style>
 
     <Style x:Key="SecondaryButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Background" Value="{StaticResource SurfaceBrush}" />
         <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Padding" Value="16,10" />
+        <Setter Property="Padding" Value="20,10" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeBody}" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisualStyle}" />
@@ -166,7 +206,7 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{StaticResource CornerRadiusSmall}"
+                            CornerRadius="{StaticResource CornerRadiusPill}"
                             SnapsToDevicePixels="True">
                         <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"

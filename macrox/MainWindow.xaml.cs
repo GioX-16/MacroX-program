@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using macrox.Interop;
 using macrox.ViewModels;
 
 namespace macrox
@@ -13,6 +14,7 @@ namespace macrox
         {
             InitializeComponent();
             DataContext = new MainViewModel();
+            SourceInitialized += (_, _) => DarkTitleBar.Apply(this);
         }
     }
 }

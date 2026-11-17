@@ -1,6 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <Content Include="Macrox_app_icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\src\MacroX.Application\MacroX.Application.csproj" />
     <ProjectReference Include="..\src\MacroX.Infrastructure\MacroX.Infrastructure.csproj" />
     <ProjectReference Include="..\src\MacroX.Shared\MacroX.Shared.csproj" />
@@ -12,6 +16,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Macrox_app_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
 </Project>
