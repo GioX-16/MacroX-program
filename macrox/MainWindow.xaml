@@ -94,12 +94,13 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Margin="24,26,24,22" Orientation="Horizontal">
-                        <Image Width="42"
-                               Height="42"
+                        <Image Width="56"
+                               Height="36"
                                VerticalAlignment="Center"
                                AutomationProperties.Name="MacroX"
                                RenderOptions.BitmapScalingMode="HighQuality"
-                               Source="pack://application:,,,/Assets/Macrox_logo.png" />
+                               Source="pack://application:,,,/Assets/Macrox_logo.png"
+                               Stretch="Uniform" />
                         <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
                             <TextBlock Style="{StaticResource BrandTextStyle}"
                                        Text="{Binding ApplicationTitle, Mode=OneWay}" />
