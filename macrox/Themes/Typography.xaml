@@ -3,12 +3,12 @@
                     xmlns:sys="clr-namespace:System;assembly=System.Runtime">
 
     <!-- ============================================================
-         Tipografía de MacroX. Centraliza familias, tamaños y estilos
-         de texto para no repetir valores en las vistas.
+         Tipografía de MacroX.
+         Sans neo-grotesca: Inter, con Segoe UI Variable de respaldo.
          ============================================================ -->
 
-    <FontFamily x:Key="FontFamilyDefault">Segoe UI Variable Text, Segoe UI</FontFamily>
-    <FontFamily x:Key="FontFamilyDisplay">Segoe UI Variable Display, Segoe UI</FontFamily>
+    <FontFamily x:Key="FontFamilyDefault">Inter, Segoe UI Variable Text, Segoe UI</FontFamily>
+    <FontFamily x:Key="FontFamilyDisplay">Inter, Segoe UI Variable Display, Segoe UI</FontFamily>
     <FontFamily x:Key="FontFamilyIcons">Segoe Fluent Icons, Segoe MDL2 Assets</FontFamily>
 
     <sys:Double x:Key="FontSizeCaption">12</sys:Double>
@@ -25,6 +25,7 @@
         <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
     </Style>
 
+    <!-- H1 -->
     <Style x:Key="PageTitleTextStyle" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource FontFamilyDisplay}" />
         <Setter Property="FontSize" Value="{StaticResource FontSizePageTitle}" />
@@ -35,27 +36,33 @@
 
     <Style x:Key="PageSubtitleTextStyle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="{StaticResource FontSizeBody}" />
+        <Setter Property="FontWeight" Value="Regular" />
         <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}" />
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
 
+    <!-- H2 -->
     <Style x:Key="SectionTitleTextStyle" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource FontFamilyDisplay}" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeSectionTitle}" />
-        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontWeight" Value="Medium" />
         <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
 
+    <!-- Cuerpo -->
     <Style x:Key="BodyTextStyle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="{StaticResource FontSizeBody}" />
+        <Setter Property="FontWeight" Value="Regular" />
         <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}" />
         <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="LineHeight" Value="21" />
     </Style>
 
+    <!-- Metadatos: versión, estado -->
     <Style x:Key="CaptionTextStyle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="{StaticResource FontSizeCaption}" />
+        <Setter Property="FontWeight" Value="Regular" />
         <Setter Property="Foreground" Value="{StaticResource TextMutedBrush}" />
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
