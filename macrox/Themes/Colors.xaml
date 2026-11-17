@@ -3,16 +3,24 @@
 
     <!-- ============================================================
          Paleta Dark Glass de MacroX.
-         Monocromática: negros verdosos y un único acento verde,
-         tomado del logo (#34AB4A). Sin colores secundarios.
+
+         Neutros fríos (negro + azul medianoche) como base, el verde
+         del logo como único acento y un azul acero muy bajo para
+         dar profundidad al vidrio. Sin colores secundarios.
          ============================================================ -->
 
+    <!-- Neutros de profundidad -->
+    <Color x:Key="InkColor">#05080C</Color>
+    <Color x:Key="MidnightColor">#08131C</Color>
+    <Color x:Key="DeepForestColor">#0A1D15</Color>
+
     <!-- Superficies -->
-    <Color x:Key="PageBackgroundColor">#07100B</Color>
+    <Color x:Key="PageBackgroundColor">#05080C</Color>
     <Color x:Key="SurfaceColor">#14FFFFFF</Color>
     <Color x:Key="SurfaceStrongColor">#1AFFFFFF</Color>
     <Color x:Key="SurfaceMutedColor">#1FFFFFFF</Color>
     <Color x:Key="BorderColor">#26FFFFFF</Color>
+    <Color x:Key="GlassBorderCoolColor">#24A9C1D4</Color>
     <Color x:Key="GlassHighlightColor">#38FFFFFF</Color>
 
     <!-- Texto -->
@@ -28,8 +36,11 @@
     <Color x:Key="AccentSoftColor">#2E34AB4A</Color>
     <Color x:Key="FocusColor">#86E39C</Color>
 
+    <!-- Azul acero: solo profundidad, nunca protagonista -->
+    <Color x:Key="SteelColor">#39697D</Color>
+
     <!-- Barra lateral de cristal -->
-    <Color x:Key="SidebarBackgroundColor">#CC07110C</Color>
+    <Color x:Key="SidebarBackgroundColor">#CC060A0E</Color>
     <Color x:Key="SidebarForegroundColor">#E6EFE8</Color>
     <Color x:Key="SidebarMutedColor">#93A79A</Color>
     <Color x:Key="SidebarHoverColor">#1AFFFFFF</Color>
@@ -37,11 +48,17 @@
     <Color x:Key="SidebarSelectedForegroundColor">#FFFFFF</Color>
 
     <!-- Pinceles -->
+    <SolidColorBrush x:Key="InkBrush" Color="{StaticResource InkColor}" />
+    <SolidColorBrush x:Key="MidnightBrush" Color="{StaticResource MidnightColor}" />
+    <SolidColorBrush x:Key="DeepForestBrush" Color="{StaticResource DeepForestColor}" />
+    <SolidColorBrush x:Key="SteelBrush" Color="{StaticResource SteelColor}" />
+
     <SolidColorBrush x:Key="PageBackgroundBrush" Color="{StaticResource PageBackgroundColor}" />
     <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource SurfaceColor}" />
     <SolidColorBrush x:Key="SurfaceStrongBrush" Color="{StaticResource SurfaceStrongColor}" />
     <SolidColorBrush x:Key="SurfaceMutedBrush" Color="{StaticResource SurfaceMutedColor}" />
     <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}" />
+    <SolidColorBrush x:Key="GlassBorderCoolBrush" Color="{StaticResource GlassBorderCoolColor}" />
     <SolidColorBrush x:Key="GlassHighlightBrush" Color="{StaticResource GlassHighlightColor}" />
 
     <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimaryColor}" />
@@ -62,22 +79,28 @@
     <SolidColorBrush x:Key="SidebarSelectedBrush" Color="{StaticResource SidebarSelectedColor}" />
     <SolidColorBrush x:Key="SidebarSelectedForegroundBrush" Color="{StaticResource SidebarSelectedForegroundColor}" />
 
-    <!-- Fondo: degradado verde profundo -->
+    <!-- Fondo: del azul medianoche al verde profundo -->
     <LinearGradientBrush x:Key="AppBackdropBrush" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Offset="0" Color="#06100A" />
-        <GradientStop Offset="0.55" Color="#0A1810" />
-        <GradientStop Offset="1" Color="#0E2116" />
+        <GradientStop Offset="0" Color="{StaticResource InkColor}" />
+        <GradientStop Offset="0.5" Color="{StaticResource MidnightColor}" />
+        <GradientStop Offset="1" Color="{StaticResource DeepForestColor}" />
     </LinearGradientBrush>
 
-    <!-- Dos resplandores del mismo verde, muy contenidos -->
+    <!-- Vidrio con degradado: más luz arriba, más densidad abajo -->
+    <LinearGradientBrush x:Key="GlassSurfaceBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Offset="0" Color="#22FFFFFF" />
+        <GradientStop Offset="1" Color="#0FFFFFFF" />
+    </LinearGradientBrush>
+
+    <!-- Resplandores: verde de marca y azul acero contenido -->
     <RadialGradientBrush x:Key="GreenGlowBrush">
         <GradientStop Offset="0" Color="#4D34AB4A" />
         <GradientStop Offset="1" Color="#0034AB4A" />
     </RadialGradientBrush>
 
-    <RadialGradientBrush x:Key="DeepGreenGlowBrush">
-        <GradientStop Offset="0" Color="#3315803D" />
-        <GradientStop Offset="1" Color="#0015803D" />
+    <RadialGradientBrush x:Key="SteelGlowBrush">
+        <GradientStop Offset="0" Color="#4039697D" />
+        <GradientStop Offset="1" Color="#0039697D" />
     </RadialGradientBrush>
 
     <!-- Formas y espaciados reutilizables -->

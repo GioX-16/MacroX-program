@@ -43,8 +43,8 @@
 
     <!-- Barra de estado de cristal -->
     <Style x:Key="GlassStatusBarStyle" TargetType="Border">
-        <Setter Property="Background" Value="{StaticResource SurfaceBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+        <Setter Property="Background" Value="{StaticResource GlassSurfaceBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource GlassBorderCoolBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="CornerRadius" Value="{StaticResource CornerRadiusMedium}" />
         <Setter Property="Padding" Value="16,10" />
@@ -53,8 +53,8 @@
 
     <!-- Tarjeta de contenido -->
     <Style x:Key="CardBorderStyle" TargetType="Border">
-        <Setter Property="Background" Value="{StaticResource SurfaceStrongBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
+        <Setter Property="Background" Value="{StaticResource GlassSurfaceBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource GlassBorderCoolBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="CornerRadius" Value="{StaticResource CornerRadiusLarge}" />
         <Setter Property="Padding" Value="{StaticResource CardPadding}" />

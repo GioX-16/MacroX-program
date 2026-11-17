@@ -75,7 +75,7 @@
                      Margin="0,0,-280,-320"
                      HorizontalAlignment="Right"
                      VerticalAlignment="Bottom"
-                     Fill="{StaticResource DeepGreenGlowBrush}" />
+                     Fill="{StaticResource SteelGlowBrush}" />
         </Grid>
 
         <Grid Margin="14">
