@@ -3,10 +3,192 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:macrox"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        xmlns:vm="clr-namespace:macrox.ViewModels"
+        Title="{Binding ApplicationTitle, Mode=OneWay, FallbackValue=MacroX}"
+        Width="1240"
+        Height="780"
+        MinWidth="980"
+        MinHeight="620"
+        Background="{StaticResource PageBackgroundBrush}"
+        FontFamily="{StaticResource FontFamilyDefault}"
+        FontSize="{StaticResource FontSizeBody}"
+        Foreground="{StaticResource TextPrimaryBrush}"
+        SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Display"
+        UseLayoutRounding="True"
+        WindowStartupLocation="CenterScreen"
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}"
+        mc:Ignorable="d">
 
+    <Window.Resources>
+        <!-- Render temporal de una sección. Se sustituirá por las vistas reales
+             cuando existan las pantallas de la capa de aplicación. -->
+        <DataTemplate DataType="{x:Type vm:NavigationSection}">
+            <Border Margin="0,0,0,24"
+                    VerticalAlignment="Top"
+                    Style="{StaticResource CardBorderStyle}">
+                <StackPanel MaxWidth="640" HorizontalAlignment="Left">
+                    <Border Width="56"
+                            Height="56"
+                            HorizontalAlignment="Left"
+                            Background="{StaticResource AccentSoftBrush}"
+                            CornerRadius="{StaticResource CornerRadiusMedium}">
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="{StaticResource FontFamilyIcons}"
+                                   FontSize="26"
+                                   Foreground="{StaticResource AccentBrush}"
+                                   Text="{Binding Icon}" />
+                    </Border>
+
+                    <TextBlock Margin="0,20,0,0"
+                               Style="{StaticResource SectionTitleTextStyle}"
+                               Text="{Binding Title}" />
+
+                    <TextBlock Margin="0,8,0,0"
+                               Style="{StaticResource BodyTextStyle}"
+                               Text="{Binding Description}" />
+
+                    <Border Height="1"
+                            Margin="0,24,0,16"
+                            Background="{StaticResource BorderBrush}" />
+
+                    <TextBlock Style="{StaticResource CaptionTextStyle}"
+                               Text="Esta sección todavía no tiene contenido. La vista se conectará cuando la capa de aplicación exponga sus casos de uso." />
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Barra lateral -->
+        <Border Grid.Column="0" Background="{StaticResource SidebarBackgroundBrush}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Margin="24,28,24,28" Orientation="Horizontal">
+                    <Border Width="38"
+                            Height="38"
+                            Background="{StaticResource AccentBrush}"
+                            CornerRadius="{StaticResource CornerRadiusSmall}">
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="{StaticResource FontFamilyDisplay}"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource AccentForegroundBrush}"
+                                   Text="M" />
+                    </Border>
+                    <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
+                        <TextBlock Style="{StaticResource BrandTextStyle}"
+                                   Text="{Binding ApplicationTitle, Mode=OneWay}" />
+                        <TextBlock Margin="0,2,0,0"
+                                   Style="{StaticResource SidebarCaptionTextStyle}"
+                                   Text="{Binding ApplicationSubtitle, Mode=OneWay}" />
+                    </StackPanel>
+                </StackPanel>
+
+                <ListBox Grid.Row="1"
+                         ItemContainerStyle="{StaticResource NavigationItemStyle}"
+                         ItemsSource="{Binding Sections, Mode=OneTime}"
+                         SelectedItem="{Binding SelectedSection, Mode=TwoWay}"
+                         Style="{StaticResource NavigationListBoxStyle}"
+                         TabIndex="0" />
+
+                <Border Grid.Row="2"
+                        Margin="24,16,24,24"
+                        Padding="0,16,0,0"
+                        BorderBrush="{StaticResource SidebarHoverBrush}"
+                        BorderThickness="0,1,0,0">
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource SidebarCaptionTextStyle}"
+                                   Text="Ejecución local" />
+                        <TextBlock Margin="0,2,0,0"
+                                   Opacity="0.75"
+                                   Style="{StaticResource SidebarCaptionTextStyle}"
+                                   Text="{Binding DisplayVersion, Mode=OneWay}" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Área de contenido -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    Padding="32,24"
+                    Background="{StaticResource SurfaceBrush}"
+                    BorderBrush="{StaticResource BorderBrush}"
+                    BorderThickness="0,0,0,1">
+                <StackPanel>
+                    <TextBlock AutomationProperties.HeadingLevel="Level1"
+                               Style="{StaticResource PageTitleTextStyle}"
+                               Text="{Binding SelectedSection.Title, Mode=OneWay}" />
+                    <TextBlock Margin="0,4,0,0"
+                               Style="{StaticResource PageSubtitleTextStyle}"
+                               Text="{Binding SelectedSection.Description, Mode=OneWay}" />
+                </StackPanel>
+            </Border>
+
+            <ProgressBar Grid.Row="1"
+                         AutomationProperties.LiveSetting="Polite"
+                         Style="{StaticResource BusyProgressBarStyle}"
+                         Visibility="{Binding IsBusy, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+            <ScrollViewer Grid.Row="2"
+                          HorizontalScrollBarVisibility="Disabled"
+                          Padding="{StaticResource PagePadding}"
+                          VerticalScrollBarVisibility="Auto">
+                <ContentControl HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Top"
+                                AutomationProperties.Name="{Binding SelectedSection.Title, Mode=OneWay}"
+                                Content="{Binding SelectedSection, Mode=OneWay}" />
+            </ScrollViewer>
+
+            <Border Grid.Row="3"
+                    Padding="32,10"
+                    Background="{StaticResource SurfaceBrush}"
+                    BorderBrush="{StaticResource BorderBrush}"
+                    BorderThickness="0,1,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Ellipse Width="8"
+                                 Height="8"
+                                 Margin="0,0,8,0"
+                                 VerticalAlignment="Center"
+                                 Fill="{StaticResource AccentBrush}" />
+                        <TextBlock AutomationProperties.LiveSetting="Polite"
+                                   FontSize="{StaticResource FontSizeCaption}"
+                                   Foreground="{StaticResource TextSecondaryBrush}"
+                                   Text="{Binding StatusMessage, Mode=OneWay}" />
+                    </StackPanel>
+
+                    <TextBlock Grid.Column="1"
+                               FontSize="{StaticResource FontSizeCaption}"
+                               Foreground="{StaticResource TextMutedBrush}"
+                               Text="Datos locales · Sin conexión externa" />
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

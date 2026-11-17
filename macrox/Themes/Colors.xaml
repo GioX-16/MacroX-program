@@ -1,0 +1,65 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ============================================================
+         Paleta de MacroX. Cambiar aquí afecta a toda la aplicación.
+         ============================================================ -->
+
+    <!-- Superficies (contenido) -->
+    <Color x:Key="PageBackgroundColor">#F4F5F9</Color>
+    <Color x:Key="SurfaceColor">#FFFFFF</Color>
+    <Color x:Key="SurfaceMutedColor">#F9FAFB</Color>
+    <Color x:Key="BorderColor">#E5E7EB</Color>
+
+    <!-- Texto -->
+    <Color x:Key="TextPrimaryColor">#111827</Color>
+    <Color x:Key="TextSecondaryColor">#4B5563</Color>
+    <Color x:Key="TextMutedColor">#9CA3AF</Color>
+
+    <!-- Marca / acento -->
+    <Color x:Key="AccentColor">#4F46E5</Color>
+    <Color x:Key="AccentHoverColor">#4338CA</Color>
+    <Color x:Key="AccentForegroundColor">#FFFFFF</Color>
+    <Color x:Key="AccentSoftColor">#EEF2FF</Color>
+    <Color x:Key="FocusColor">#6366F1</Color>
+
+    <!-- Barra lateral oscura -->
+    <Color x:Key="SidebarBackgroundColor">#111827</Color>
+    <Color x:Key="SidebarForegroundColor">#E5E7EB</Color>
+    <Color x:Key="SidebarMutedColor">#9CA3AF</Color>
+    <Color x:Key="SidebarHoverColor">#1F2937</Color>
+    <Color x:Key="SidebarSelectedColor">#312E81</Color>
+    <Color x:Key="SidebarSelectedForegroundColor">#FFFFFF</Color>
+
+    <!-- Pinceles -->
+    <SolidColorBrush x:Key="PageBackgroundBrush" Color="{StaticResource PageBackgroundColor}" />
+    <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource SurfaceColor}" />
+    <SolidColorBrush x:Key="SurfaceMutedBrush" Color="{StaticResource SurfaceMutedColor}" />
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}" />
+
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimaryColor}" />
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource TextSecondaryColor}" />
+    <SolidColorBrush x:Key="TextMutedBrush" Color="{StaticResource TextMutedColor}" />
+
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+    <SolidColorBrush x:Key="AccentHoverBrush" Color="{StaticResource AccentHoverColor}" />
+    <SolidColorBrush x:Key="AccentForegroundBrush" Color="{StaticResource AccentForegroundColor}" />
+    <SolidColorBrush x:Key="AccentSoftBrush" Color="{StaticResource AccentSoftColor}" />
+    <SolidColorBrush x:Key="FocusBrush" Color="{StaticResource FocusColor}" />
+
+    <SolidColorBrush x:Key="SidebarBackgroundBrush" Color="{StaticResource SidebarBackgroundColor}" />
+    <SolidColorBrush x:Key="SidebarForegroundBrush" Color="{StaticResource SidebarForegroundColor}" />
+    <SolidColorBrush x:Key="SidebarMutedBrush" Color="{StaticResource SidebarMutedColor}" />
+    <SolidColorBrush x:Key="SidebarHoverBrush" Color="{StaticResource SidebarHoverColor}" />
+    <SolidColorBrush x:Key="SidebarSelectedBrush" Color="{StaticResource SidebarSelectedColor}" />
+    <SolidColorBrush x:Key="SidebarSelectedForegroundBrush" Color="{StaticResource SidebarSelectedForegroundColor}" />
+
+    <!-- Formas y espaciados reutilizables -->
+    <CornerRadius x:Key="CornerRadiusSmall">8</CornerRadius>
+    <CornerRadius x:Key="CornerRadiusMedium">12</CornerRadius>
+    <CornerRadius x:Key="CornerRadiusPill">999</CornerRadius>
+
+    <Thickness x:Key="PagePadding">32,24,32,24</Thickness>
+    <Thickness x:Key="CardPadding">32</Thickness>
+
+</ResourceDictionary>
