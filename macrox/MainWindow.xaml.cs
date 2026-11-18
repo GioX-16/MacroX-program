@@ -16,5 +16,10 @@ namespace macrox
             DataContext = new MainViewModel();
             SourceInitialized += (_, _) => DarkTitleBar.Apply(this);
         }
+
+        private void ListBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
