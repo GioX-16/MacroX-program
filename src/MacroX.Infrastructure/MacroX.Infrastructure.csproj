@@ -1,6 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.105.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MacroX.Domain\MacroX.Domain.csproj" />
     <ProjectReference Include="..\MacroX.Application\MacroX.Application.csproj" />
   </ItemGroup>

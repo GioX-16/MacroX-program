@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:macrox.Views"
         xmlns:vm="clr-namespace:macrox.ViewModels"
         Title="{Binding ApplicationTitle, Mode=OneWay, FallbackValue=MacroX}"
         Icon="pack://application:,,,/Macrox_app_icon.ico"
@@ -55,9 +56,17 @@
                             Background="{StaticResource DividerBrush}" />
 
                     <TextBlock Style="{StaticResource CaptionTextStyle}"
-                               Text="Esta sección todavía no tiene contenido. La vista se conectará cuando la capa de aplicación exponga sus casos de uso." />
+                               Text="Esta sección todavía no tiene contenido." />
                 </StackPanel>
             </ContentControl>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:MacroLibraryViewModel}">
+            <views:MacroLibraryView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:ExcelWorkspaceViewModel}">
+            <views:ExcelWorkspaceView />
         </DataTemplate>
     </Window.Resources>
 
@@ -170,7 +179,7 @@
                     <ContentControl HorizontalContentAlignment="Stretch"
                                     VerticalContentAlignment="Top"
                                     AutomationProperties.Name="{Binding SelectedSection.Title, Mode=OneWay}"
-                                    Content="{Binding SelectedSection, Mode=OneWay}" />
+                                    Content="{Binding CurrentPage, Mode=OneWay}" />
                 </ScrollViewer>
 
                 <Border Grid.Row="3"

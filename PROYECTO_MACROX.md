@@ -6,7 +6,7 @@
 | Tipo | Aplicación de escritorio para Windows (local, un solo usuario) |
 | Solución | `MacroX.slnx` (formato XML de solución, .NET 10) |
 | Stack base | C# · .NET 10 LTS · WPF + XAML · MVVM |
-| Estado | En construcción — shell de UI y base de MVVM ya creados |
+| Estado | En construcción — shell de UI y MVVM propios terminados; capas Domain/Application/Infrastructure aún sin implementar |
 | Rama de trabajo | `sdev-main` |
 | Documento | Visión, alcance funcional y arquitectura técnica |
 
@@ -31,7 +31,7 @@ El objetivo central es **transformar tareas manuales tediosas en flujos automati
 
 | En alcance | Fuera de alcance (por ahora) |
 |---|---|
-| Procesamiento por lotes de `.xlsx` / `.xls` | Edición colaborativa o multiusuario |
+| Procesamiento por lotes de `.xlsx` / `.xlsm` | Edición colaborativa o multiusuario |
 | Catálogo extensible de macros | Ejecución de código VBA arbitrario |
 | Pipelines ordenados y parametrizados | Fórmulas dinámicas o modelos financieros |
 | Historial local de ejecuciones | Sincronización en la nube |
@@ -108,6 +108,7 @@ El catálogo es la pieza funcional central. Cada macro es una operación atómic
 |---|---|---|
 | Buscar y reemplazar | Sustituye valores o patrones | Columna, texto/patrón, reemplazo, distinguir mayúsculas |
 | Limpiar y organizar datos | Normalización combinada de celdas | Conjunto de reglas habilitadas |
+| Separar por columna | Crea una hoja por cada valor distinto, copia las filas y suma Total si esa columna existe | Columna |
 
 ### 3.5 Encadenamiento (Pipelines)
 

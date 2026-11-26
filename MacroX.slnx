@@ -6,6 +6,9 @@
     <Project Path="src/MacroX.Shared/MacroX.Shared.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/MacroX.Application.Tests/MacroX.Application.Tests.csproj" />
+    <Project Path="tests/MacroX.Domain.Tests/MacroX.Domain.Tests.csproj" />
+    <Project Path="tests/MacroX.Infrastructure.Tests/MacroX.Infrastructure.Tests.csproj" />
     <Project Path="tests/MacroX.Tests/MacroX.Tests.csproj" />
   </Folder>
   <Project Path="macrox/macrox.csproj" />

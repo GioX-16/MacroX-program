@@ -13,7 +13,6 @@ namespace macrox
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
             SourceInitialized += (_, _) => DarkTitleBar.Apply(this);
         }
 

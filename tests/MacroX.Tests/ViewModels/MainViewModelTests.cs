@@ -69,7 +69,9 @@ namespace MacroX.Tests.ViewModels
             sut.SelectedSection = target;
 
             Assert.Same(target, sut.SelectedSection);
-            Assert.Equal(new[] { nameof(MainViewModel.SelectedSection) }, raised);
+            Assert.Equal(
+                new[] { nameof(MainViewModel.SelectedSection), nameof(MainViewModel.CurrentPage) },
+                raised);
         }
 
         [Fact]
