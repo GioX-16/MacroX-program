@@ -2,36 +2,43 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!-- ============================================================
-         MacroX · Dark Glass / Emerald
-         Canvas obsidiana, vidrio por densidad y un único acento verde.
-         Valores alineados a la especificación de diseño.
+         MacroX · Dark Glass / Azure & Emerald
+         Dos acentos con roles distintos: azul para navegación y
+         acciones; verde para estado, confirmación y resultados.
+         La base neutra mantiene el cristal oscuro sin sesgo.
          ============================================================ -->
 
     <!-- Canvas y superficies de vidrio -->
-    <Color x:Key="CanvasColor">#060A09</Color>
-    <Color x:Key="SidebarSurfaceColor">#BF0A100F</Color>
-    <Color x:Key="CardSurfaceColor">#7314201D</Color>
-    <Color x:Key="FooterSurfaceColor">#990A100F</Color>
-    <Color x:Key="RimLightColor">#24A7F3D0</Color>
+    <Color x:Key="CanvasColor">#060910</Color>
+    <Color x:Key="SidebarSurfaceColor">#BF0A0F1A</Color>
+    <Color x:Key="CardSurfaceColor">#73141D2B</Color>
+    <Color x:Key="FooterSurfaceColor">#990A0F1A</Color>
+    <Color x:Key="RimLightColor">#24A7D0F3</Color>
     <Color x:Key="InnerHighlightColor">#1FFFFFFF</Color>
     <Color x:Key="NavigationHoverColor">#0AFFFFFF</Color>
 
     <!-- Texto -->
-    <Color x:Key="TextPrimaryColor">#F4F7F6</Color>
-    <Color x:Key="TextSecondaryColor">#8FA39D</Color>
-    <Color x:Key="TextMutedColor">#526660</Color>
+    <Color x:Key="TextPrimaryColor">#F4F7FC</Color>
+    <Color x:Key="TextSecondaryColor">#8FA0B3</Color>
+    <Color x:Key="TextMutedColor">#526478</Color>
 
-    <!-- Acento esmeralda -->
-    <Color x:Key="AccentColor">#10B981</Color>
-    <Color x:Key="AccentHoverColor">#34D399</Color>
-    <Color x:Key="AccentForegroundColor">#04120C</Color>
-    <Color x:Key="AccentSoftColor">#2610B981</Color>
-    <Color x:Key="AccentBorderColor">#4D34D399</Color>
-    <Color x:Key="FocusColor">#6EE7B7</Color>
+    <!-- Acento primario: azul · navegación y acciones -->
+    <Color x:Key="AccentColor">#3B82F6</Color>
+    <Color x:Key="AccentHoverColor">#60A5FA</Color>
+    <Color x:Key="AccentForegroundColor">#061024</Color>
+    <Color x:Key="AccentSoftColor">#263B82F6</Color>
+    <Color x:Key="AccentBorderColor">#4D60A5FA</Color>
+    <Color x:Key="FocusColor">#93C5FD</Color>
+
+    <!-- Acento secundario: verde · estado y confirmación -->
+    <Color x:Key="SecondaryAccentColor">#10B981</Color>
+    <Color x:Key="SecondaryAccentHoverColor">#34D399</Color>
+    <Color x:Key="SecondaryAccentSoftColor">#2610B981</Color>
+    <Color x:Key="SecondaryAccentBorderColor">#4D34D399</Color>
 
     <!-- Barra lateral -->
-    <Color x:Key="SidebarForegroundColor">#F4F7F6</Color>
-    <Color x:Key="SidebarMutedColor">#8FA39D</Color>
+    <Color x:Key="SidebarForegroundColor">#F4F7FC</Color>
+    <Color x:Key="SidebarMutedColor">#8FA0B3</Color>
 
     <!-- Pinceles base -->
     <SolidColorBrush x:Key="CanvasBrush" Color="{StaticResource CanvasColor}" />
@@ -53,24 +60,30 @@
     <SolidColorBrush x:Key="AccentBorderBrush" Color="{StaticResource AccentBorderColor}" />
     <SolidColorBrush x:Key="FocusBrush" Color="{StaticResource FocusColor}" />
 
+    <SolidColorBrush x:Key="SecondaryAccentBrush" Color="{StaticResource SecondaryAccentColor}" />
+    <SolidColorBrush x:Key="SecondaryAccentHoverBrush" Color="{StaticResource SecondaryAccentHoverColor}" />
+    <SolidColorBrush x:Key="SecondaryAccentSoftBrush" Color="{StaticResource SecondaryAccentSoftColor}" />
+    <SolidColorBrush x:Key="SecondaryAccentBorderBrush" Color="{StaticResource SecondaryAccentBorderColor}" />
+
     <SolidColorBrush x:Key="SidebarForegroundBrush" Color="{StaticResource SidebarForegroundColor}" />
     <SolidColorBrush x:Key="SidebarMutedBrush" Color="{StaticResource SidebarMutedColor}" />
 
-    <!-- Orbes de iluminación ambiental -->
-    <SolidColorBrush x:Key="OrbPrimaryBrush" Color="#2E10B981" />
-    <SolidColorBrush x:Key="OrbSecondaryBrush" Color="#59064E3B" />
+    <!-- Orbes de iluminación ambiental: azul arriba, verde abajo -->
+    <SolidColorBrush x:Key="OrbPrimaryBrush" Color="#2E3B82F6" />
+    <SolidColorBrush x:Key="OrbSecondaryBrush" Color="#5910B981" />
 
-    <!-- Ítem de navegación activo: degradado horizontal -->
+    <!-- Ítem de navegación activo: degradado azul -->
     <LinearGradientBrush x:Key="ActiveNavigationBrush" StartPoint="0,0" EndPoint="1,0">
-        <GradientStop Offset="0" Color="#2E10B981" />
-        <GradientStop Offset="1" Color="#0510B981" />
+        <GradientStop Offset="0" Color="#2E3B82F6" />
+        <GradientStop Offset="1" Color="#053B82F6" />
     </LinearGradientBrush>
 
-    <!-- Divisoria luminosa al centro, transparente en los extremos -->
+    <!-- Divisoria: transición azul → verde, transparente en los extremos -->
     <LinearGradientBrush x:Key="DividerBrush" StartPoint="0,0" EndPoint="1,0">
-        <GradientStop Offset="0" Color="#0034D399" />
-        <GradientStop Offset="0.5" Color="#4034D399" />
-        <GradientStop Offset="1" Color="#0034D399" />
+        <GradientStop Offset="0" Color="#003B82F6" />
+        <GradientStop Offset="0.35" Color="#603B82F6" />
+        <GradientStop Offset="0.65" Color="#6010B981" />
+        <GradientStop Offset="1" Color="#0010B981" />
     </LinearGradientBrush>
 
     <!-- Formas -->

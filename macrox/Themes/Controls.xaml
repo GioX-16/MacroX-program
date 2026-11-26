@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!-- ============================================================
-         Estilos del shell Dark Glass / Emerald.
+         Estilos del shell Dark Glass / Azure & Emerald.
          ============================================================ -->
 
     <Style x:Key="FocusVisualStyle">
@@ -133,7 +133,7 @@
                                                       Direction="0"
                                                       Opacity="0.5"
                                                       ShadowDepth="0"
-                                                      Color="#10B981" />
+                                                      Color="#3B82F6" />
                                 </Rectangle.Effect>
                             </Rectangle>
 
@@ -264,7 +264,7 @@
     </Style>
 
     <Style x:Key="SheetGridStyle" TargetType="DataGrid">
-        <Setter Property="Background" Value="#660A100F" />
+        <Setter Property="Background" Value="#660A0F1A" />
         <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
         <Setter Property="BorderBrush" Value="{StaticResource RimLightBrush}" />
         <Setter Property="BorderThickness" Value="1" />
@@ -280,7 +280,7 @@
         <Setter Property="ColumnHeaderStyle">
             <Setter.Value>
                 <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="#E60A100F" />
+                    <Setter Property="Background" Value="#E60A0F1A" />
                     <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
                     <Setter Property="BorderBrush" Value="{StaticResource RimLightBrush}" />
                     <Setter Property="BorderThickness" Value="0,0,0,1" />

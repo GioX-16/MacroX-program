@@ -31,15 +31,15 @@
                     <Border Width="48"
                             Height="48"
                             HorizontalAlignment="Left"
-                            Background="{StaticResource AccentSoftBrush}"
-                            BorderBrush="{StaticResource AccentBorderBrush}"
+                            Background="{StaticResource SecondaryAccentSoftBrush}"
+                            BorderBrush="{StaticResource SecondaryAccentBorderBrush}"
                             BorderThickness="1"
                             CornerRadius="{StaticResource CornerRadiusSmall}">
                         <TextBlock HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    FontFamily="{StaticResource FontFamilyIcons}"
                                    FontSize="22"
-                                   Foreground="{StaticResource FocusBrush}"
+                                   Foreground="{StaticResource SecondaryAccentHoverBrush}"
                                    Text="{Binding Icon}" />
                     </Border>
 
@@ -197,7 +197,7 @@
                                      Height="6"
                                      Margin="0,0,8,0"
                                      VerticalAlignment="Center"
-                                     Fill="{StaticResource AccentBrush}" />
+                                     Fill="{StaticResource SecondaryAccentBrush}" />
                             <TextBlock FontSize="{StaticResource FontSizeCaption}"
                                        Foreground="{StaticResource TextMutedBrush}"
                                        Text="{Binding StatusMessage, Mode=OneWay}" />
